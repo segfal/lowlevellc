@@ -20,3 +20,25 @@ pub fn contains_duplicate(nums: Vec<i32>) -> bool {
     false
     
 }
+
+
+//O(n) time, O(1) space using a hashset
+pub fn contains_duplicate(nums: Vec<i32>) -> bool {
+    
+    let mut set = HashSet::new();
+    
+    for i in 0..nums.len() {
+    
+        if set.contains(&nums[i]) {
+    
+            return true;
+    
+        }
+    
+        set.insert(nums[i]);
+    
+    }
+    
+    false
+    
+}
